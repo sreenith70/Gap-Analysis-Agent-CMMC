@@ -1,0 +1,52 @@
+[
+  {
+    "control_id": "AC.L1-3.1.1",
+    "description": "Limit system access to authorized users and devices.",
+    "level": 1
+  },
+  {
+    "control_id": "AC.L1-3.1.2",
+    "description": "Limit information system access to the types of transactions and functions that authorized users are permitted to execute.",
+    "level": 1
+  },
+  {
+    "control_id": "IA.L1-3.5.2",
+    "description": "Authenticate (or verify) the identities of users, processes, or devices.",
+    "level": 1
+  },
+  {
+    "control_id": "MP.L1-3.8.3",
+    "description": "Sanitize or destroy information system media containing Federal Contract Information before disposal or release.",
+    "level": 1
+  },
+  {
+    "control_id": "SC.L1-3.13.1",
+    "description": "Monitor, control, and protect organizational communications.",
+    "level": 1
+  },
+  {
+    "control_id": "IR.L2-3.6.1",
+    "description": "Establish an operational incident-handling capability.",
+    "level": 2
+  },
+  {
+    "control_id": "AU.L2-3.3.2",
+    "description": "Ensure actions of individual users can be uniquely traced.",
+    "level": 2
+  },
+  {
+    "control_id": "RA.L2-3.11.1",
+    "description": "Periodically assess the risk to organizational operations.",
+    "level": 2
+  },
+  {
+    "control_id": "CM.L2-3.4.3",
+    "description": "Track, review, and approve/disapprove changes to the system.",
+    "level": 2
+  },
+  {
+    "control_id": "SI.L2-3.14.1",
+    "description": "Identify, report, and correct system flaws in a timely manner.",
+    "level": 2
+  }
+]

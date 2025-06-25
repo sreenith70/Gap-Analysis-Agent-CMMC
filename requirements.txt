@@ -1,0 +1,8 @@
+streamlit
+chromadb
+sentence-transformers
+llama-index
+pymupdf
+numpy
+pandas
+scikit-learn

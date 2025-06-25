@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "report_title": "Compliance Gap Analysis Report",
+    "total_controls_analyzed": 10,
+    "generated_at": "2025-06-25T22:18:43.503700",
+    "summary": {
+      "fully_met": 4,
+      "partially_met": 6,
+      "not_met": 0
+    }
+  },
+  "results": [
+    {
+      "control_id": "AC.L1-3.1.1",
+      "status": "Partially Met",
+      "confidence_score": 0.3834,
+      "matched_text": "21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.\n---\n1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.\n---\n2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.",
+      "llm_explanation": "The context partially addresses the control requirement. The context mentions user identification and password restrictions, access control through RBAC, and the prohibition of shared credentials. However, it does not explicitly mention specific mechanisms used to enforce these restrictions, leaving some aspects of the control unaddressed. Therefore, the context partially satisfies the control requirement."
+    },
+    {
+      "control_id": "AC.L1-3.1.2",
+      "status": "Partially Met",
+      "confidence_score": 0.4184,
+      "matched_text": "2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.\n---\n21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.\n---\n1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.",
+      "llm_explanation": "The context partially addresses the control requirement by mentioning user permission limits and ticket-based software installations. However, the context does not provide specific information about the types of transactions and functions that authorized users are permitted to execute. Therefore, the control requirement cannot be fully evaluated based on the provided context."
+    },
+    {
+      "control_id": "IA.L1-3.5.2",
+      "status": "Partially Met",
+      "confidence_score": 0.391,
+      "matched_text": "3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.\n---\n1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.\n---\n30. Devices used for remote work must be enrolled in Mobile Device Management (MDM) with encryption, disk lock, and auto-wipe policies enabled for lost/stolen asset protection.",
+      "llm_explanation": "The context partially addresses the control requirement by mentioning multi-factor authentication (MFA) and device enrollment in MDM. However, it does not provide specific details about how the MFA implementation is enforced, how device enrollment is verified, or how the context ensures the uniqueness of user identifiers and passwords. Therefore, the context partially satisfies the control requirement."
+    },
+    {
+      "control_id": "MP.L1-3.8.3",
+      "status": "Partially Met",
+      "confidence_score": 0.3834,
+      "matched_text": "8. Devices scheduled for disposal undergo secure media sanitization using DoD 5220.22-M-compliant software; irreparable drives are physically destroyed using shredders certified for classified equipment.\n---\n36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.\n---\n7. The use of USB drives and removable media is tightly controlled; all such devices must be encrypted using FIPS-compliant methods and must be registered with the IT team before use.",
+      "llm_explanation": "The context partially addresses the control requirement. It mentions secure media sanitization of devices scheduled for disposal and the physical destruction of irreparable drives using shredders certified for classified equipment. However, it does not address the specific requirement of sanitizing or destroying information system media containing Federal Contract Information before disposal or release."
+    },
+    {
+      "control_id": "SC.L1-3.13.1",
+      "status": "Partially Met",
+      "confidence_score": 0.4134,
+      "matched_text": "36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.\n---\n2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.\n---\n31. Physical office locations are secured with badge-based access control systems, surveillance cameras, and visitor logs reviewed biweekly by security personnel.",
+      "llm_explanation": "The context partially addresses the control requirement by mentioning that access to sensitive systems and data is granted through Role-Based Access Control (RBAC), which helps minimize unnecessary access across departments. However, the context does not explicitly state how the compliance officer monitors, controls, and protects organizational communications. Therefore, the answer is: **Partially addressed.**"
+    },
+    {
+      "control_id": "IR.L2-3.6.1",
+      "status": "Fully Met",
+      "confidence_score": 0.3287,
+      "matched_text": "19. The organization maintains an Incident Response Plan (IRP) that outlines detection, reporting, containment, eradication, and recovery procedures; tabletop exercises are conducted every six months.\n---\n2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.\n---\n9. During onboarding, all employees undergo background verification, must sign Acceptable Use Policies (AUP), and complete initial cybersecurity training that emphasizes their responsibilities around Controlled Unclassified Information (CUI).",
+      "llm_explanation": "The context partially addresses the control requirement. While it mentions tabletop exercises and employee onboarding procedures, it does not provide specific details about how these activities are implemented to ensure an operational incident-handling capability. Therefore, it is unclear whether the control is fully implemented."
+    },
+    {
+      "control_id": "AU.L2-3.3.2",
+      "status": "Fully Met",
+      "confidence_score": 0.3266,
+      "matched_text": "1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.\n---\n14. Security logs — including authentication events, system errors, and administrator actions — are centralized, monitored for anomalies, and retained securely for 90 days.\n---\n3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.",
+      "llm_explanation": "The context partially addresses the control requirement by mentioning centralized security logs and user password restrictions. However, it does not explicitly specify how individual user actions can be uniquely traced. Therefore, the control requirement is not fully met."
+    },
+    {
+      "control_id": "RA.L2-3.11.1",
+      "status": "Fully Met",
+      "confidence_score": 0.391,
+      "matched_text": "34. Formal risk assessments are performed annually and after major technology shifts; risks are rated using a qualitative matrix, and mitigation plans are documented in the Risk Register.\n---\n15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.\n---\n20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.",
+      "llm_explanation": "The context partially addresses the control requirement by mentioning the annual and post-technology shift risk assessments, logging data monitoring, configuration change review process, and alerts configuration. However, the context does not provide specific details or indicators related to how these controls are implemented or how effective they are in mitigating risks to organizational operations. Therefore, the control requirement is not fully satisfied based on the provided context."
+    },
+    {
+      "control_id": "CM.L2-3.4.3",
+      "status": "Fully Met",
+      "confidence_score": 0.3239,
+      "matched_text": "20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.\n---\n36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.\n---\n15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.",
+      "llm_explanation": "The context partially addresses the control requirement. It mentions the requirement to review and approve/disapprove changes to the system, but it does not specify how the control is implemented or what specific steps are followed in the review process. This context does not provide sufficient information to determine if the control requirement is fully met."
+    },
+    {
+      "control_id": "SI.L2-3.14.1",
+      "status": "Partially Met",
+      "confidence_score": 0.304,
+      "matched_text": "15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.\n---\n13. All system clocks are synchronized via an NTP server to maintain accurate timestamps across security logs, system audits, and forensic investigations.\n---\n28. Vulnerability scans are performed weekly using OpenVAS; high-severity issues are remediated within 72 hours, and patch deployment is tracked using endpoint management software.",
+      "llm_explanation": "The context partially addresses the control requirement. It mentions the monthly review of log data, configuration of alerts for critical events, and weekly vulnerability scans, indicating a system monitoring approach. However, it lacks details on how the system flaws are identified, reported, and corrected, which is crucial for assessing the control's effectiveness."
+    }
+  ]
+}

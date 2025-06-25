@@ -1,0 +1,51 @@
+control_id,status,confidence_score,matched_text,explanation
+AC.L1-3.1.1,Partially Met,0.3834,"21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.",N/A
+AC.L1-3.1.2,Partially Met,0.4184,"2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+---
+21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.",N/A
+IA.L1-3.5.2,Partially Met,0.391,"3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+---
+30. Devices used for remote work must be enrolled in Mobile Device Management (MDM) with encryption, disk lock, and auto-wipe policies enabled for lost/stolen asset protection.",N/A
+MP.L1-3.8.3,Partially Met,0.3834,"8. Devices scheduled for disposal undergo secure media sanitization using DoD 5220.22-M-compliant software; irreparable drives are physically destroyed using shredders certified for classified equipment.
+---
+36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+---
+7. The use of USB drives and removable media is tightly controlled; all such devices must be encrypted using FIPS-compliant methods and must be registered with the IT team before use.",N/A
+SC.L1-3.13.1,Partially Met,0.4134,"36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+---
+31. Physical office locations are secured with badge-based access control systems, surveillance cameras, and visitor logs reviewed biweekly by security personnel.",N/A
+IR.L2-3.6.1,Fully Met,0.3287,"19. The organization maintains an Incident Response Plan (IRP) that outlines detection, reporting, containment, eradication, and recovery procedures; tabletop exercises are conducted every six months.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+---
+9. During onboarding, all employees undergo background verification, must sign Acceptable Use Policies (AUP), and complete initial cybersecurity training that emphasizes their responsibilities around Controlled Unclassified Information (CUI).",N/A
+AU.L2-3.3.2,Fully Met,0.3266,"1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+---
+14. Security logs — including authentication events, system errors, and administrator actions — are centralized, monitored for anomalies, and retained securely for 90 days.
+---
+3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.",N/A
+RA.L2-3.11.1,Fully Met,0.391,"34. Formal risk assessments are performed annually and after major technology shifts; risks are rated using a qualitative matrix, and mitigation plans are documented in the Risk Register.
+---
+15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.
+---
+20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.",N/A
+CM.L2-3.4.3,Fully Met,0.3239,"20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.
+---
+36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+---
+15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.",N/A
+SI.L2-3.14.1,Partially Met,0.304,"15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.
+---
+13. All system clocks are synchronized via an NTP server to maintain accurate timestamps across security logs, system audits, and forensic investigations.
+---
+28. Vulnerability scans are performed weekly using OpenVAS; high-severity issues are remediated within 72 hours, and patch deployment is tracked using endpoint management software.",N/A

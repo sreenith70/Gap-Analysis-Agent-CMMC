@@ -1,0 +1,37 @@
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.
+4. Remote access to internal networks is allowed only through secure VPN tunnels, with logging and session monitoring enabled for every external session to ensure accountability and audit readiness.
+5. Passwords must meet complexity requirements — including length, character diversity, and change frequency — and password reuse is disallowed across the last 12 credential changes per user.
+6. Google Workspace and Dropbox are used as approved storage platforms, with access restricted using granular permissions, and internal audit reviews are performed monthly to check for unauthorized file access or sharing.
+7. The use of USB drives and removable media is tightly controlled; all such devices must be encrypted using FIPS-compliant methods and must be registered with the IT team before use.
+8. Devices scheduled for disposal undergo secure media sanitization using DoD 5220.22-M-compliant software; irreparable drives are physically destroyed using shredders certified for classified equipment.
+9. During onboarding, all employees undergo background verification, must sign Acceptable Use Policies (AUP), and complete initial cybersecurity training that emphasizes their responsibilities around Controlled Unclassified Information (CUI).
+10. Upon termination or role change, employees have all system access revoked within 24 hours, and physical access cards or hardware tokens are collected and logged as part of the HR exit checklist.
+11. Malwarebytes endpoint protection is deployed enterprise-wide with real-time protection enabled, automatic signature updates, and weekly full scans scheduled during non-business hours.
+12. All endpoints are configured to auto-lock after 10 minutes of inactivity, and any inactive sessions are automatically terminated after 30 minutes, reducing the risk of unattended access.
+13. All system clocks are synchronized via an NTP server to maintain accurate timestamps across security logs, system audits, and forensic investigations.
+14. Security logs — including authentication events, system errors, and administrator actions — are centralized, monitored for anomalies, and retained securely for 90 days.
+15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.
+16. Internal systems are segmented from public-facing web servers and cloud infrastructure using VLANs and firewalls, ensuring that exposure from DMZ components does not impact backend assets.
+17. Video conferencing tools like Zoom and Microsoft Teams are configured with SSO, MFA, and session recording disabled by default; only authorized meeting hosts may initiate sessions involving client data.
+18. Security training is conducted biannually for all employees, and job-specific training (e.g., developers, HR, finance) is required during onboarding and role transitions to address unique security responsibilities.
+19. The organization maintains an Incident Response Plan (IRP) that outlines detection, reporting, containment, eradication, and recovery procedures; tabletop exercises are conducted every six months.
+20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.
+21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+22. Access to internet websites is filtered through a secure web gateway with real-time threat intelligence; malicious URLs, known proxies, and anonymizers are blocked automatically.
+23. All portable storage devices must be IT-approved, encrypted, and scanned before connecting to any workstation; logs of device serial numbers and assigned users are maintained.
+24. CUI data is labeled according to DoD standards with headers, footers, and appropriate banner markings; handling procedures follow internal SOPs mapped to NIST 800-171 controls.
+25. Encrypted backups are created daily, stored in offsite cloud repositories, and tested quarterly for integrity; backup retention policies follow industry standards and contract requirements.
+26. The System Security Plan (SSP) documents implemented controls across all 14 CMMC domains; updates are made every 90 days or after significant infrastructure changes.
+27. An Intrusion Detection System (IDS) monitors inbound and outbound traffic for known attack patterns and anomalies, alerting the SOC team in real time for incident triage.
+28. Vulnerability scans are performed weekly using OpenVAS; high-severity issues are remediated within 72 hours, and patch deployment is tracked using endpoint management software.
+29. Access reviews are conducted quarterly by HR and IT to validate least privilege across departments; temporary project access is revoked upon completion without exception.
+30. Devices used for remote work must be enrolled in Mobile Device Management (MDM) with encryption, disk lock, and auto-wipe policies enabled for lost/stolen asset protection.
+31. Physical office locations are secured with badge-based access control systems, surveillance cameras, and visitor logs reviewed biweekly by security personnel.
+32. Data at rest is encrypted using AES-256 and all data in transit is protected with TLS 1.3 or higher; cloud platforms are required to support FIPS 140-2 validated cryptography.
+33. Temporary credentials are issued only by the helpdesk, expire within 15 minutes, and require a forced password change on first login with MFA prompt if elevated access is requested.
+34. Formal risk assessments are performed annually and after major technology shifts; risks are rated using a qualitative matrix, and mitigation plans are documented in the Risk Register.
+35. All visitor access to secure areas must be approved 24 hours in advance; escorts are mandatory, and logs are maintained for 6 months for audit purposes.
+36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+
