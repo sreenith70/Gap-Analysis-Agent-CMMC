@@ -1,8 +1,44 @@
-streamlit
-chromadb
-sentence-transformers
-llama-index
-pymupdf
-numpy
-pandas
-scikit-learn
+# Core Libraries for RAG Engine
+llama-index==0.10.32
+llama-index-core==0.10.32
+llama-index-llms-ollama==0.1.6
+llama-index-vector-stores-chroma==0.1.7
+llama-index-embeddings-huggingface==0.1.5
+
+# Embedding and Transformers
+sentence-transformers==2.6.1
+transformers==4.41.2
+torch==2.2.2  # ✅ Compatible with sentence-transformers
+huggingface-hub==0.23.2  # ✅ Required by newer transformers
+
+# Vector Database
+chromadb==0.4.24
+
+# Data Processing
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.16.0
+tqdm==4.66.2
+joblib==1.4.2
+nltk==3.8.1
+regex==2024.11.6
+threadpoolctl==3.6.0
+
+# Streamlit UI
+streamlit==1.39.0
+altair==5.5.0
+blinker==1.9.0
+gitpython==3.1.44
+pillow==10.2.0
+pyarrow==15.0.2
+pydeck==0.9.1
+toml==0.10.2
+tornado==6.5.1
+watchdog==5.0.0
+
+# Misc Utilities
+packaging==24.0
+rich==13.7.1
+
+

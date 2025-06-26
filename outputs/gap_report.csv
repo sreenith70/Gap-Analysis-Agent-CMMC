@@ -1,0 +1,53 @@
+control_id,status,confidence_score,explanation,matched_text
+AC.L1-3.1.1,Partially Met,0.6,"the policy partially meets the requirement by restricting system access to authorized users and devices. however, it does not explicitly prohibit users from installing or modifying software, which could potentially be considered a security risk.","21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+---
+3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments."
+AC.L1-3.1.2,Partially Met,0.6,"the policy partially meets the requirement by restricting access to sensitive systems and data through rbac and user password requirements. however, it does not explicitly define the types of transactions and functions that authorized users are permitted to execute, leaving this aspect undefined.","21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes."
+IA.L1-3.5.2,Partially Met,0.6,"the policy partially meets the requirement by requiring users to use mfa for privileged accounts and password changes for newly provisioned accounts. however, it does not address the requirement to authenticate the identities of devices or users accessing organizational systems.","3. All privileged, administrative, and remote accounts are protected by enforced Multi-Factor Authentication (MFA), combining passwords with device-based tokens or biometric validation to reduce unauthorized access risk.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+---
+23. All portable storage devices must be IT-approved, encrypted, and scanned before connecting to any workstation; logs of device serial numbers and assigned users are maintained."
+MP.L1-3.8.3,Not Met,0.5,"the organization partially meets the requirement. the policy mentions that devices scheduled for disposal undergo secure media sanitization using dod 5220.22-m-compliant software, which is a secure method for media sanitization. however, the policy does not specify that the organization shall sanitize or destroy information system media containing federal contract information before disposal or release.","8. Devices scheduled for disposal undergo secure media sanitization using DoD 5220.22-M-compliant software; irreparable drives are physically destroyed using shredders certified for classified equipment.
+---
+36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+---
+7. The use of USB drives and removable media is tightly controlled; all such devices must be encrypted using FIPS-compliant methods and must be registered with the IT team before use."
+SC.L1-3.13.1,Partially Met,0.6,"the policy mentions monitoring and protecting organizational communications, but it does not specify how the compliance officer will ensure that sensitive operational or client-related information is not inadvertently disclosed.","36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed.
+---
+2. Access to sensitive systems and data is granted through Role-Based Access Control (RBAC), where user permissions align strictly with job functions, minimizing unnecessary access across departments.
+---
+31. Physical office locations are secured with badge-based access control systems, surveillance cameras, and visitor logs reviewed biweekly by security personnel."
+IR.L2-3.6.1,Partially Met,0.6,"the organization maintains some components of an operational incident-handling capability, including background verification, training, and incident response planning. however, the organization does not fully implement all the necessary elements, such as tabletop exercises and ids monitoring.","9. During onboarding, all employees undergo background verification, must sign Acceptable Use Policies (AUP), and complete initial cybersecurity training that emphasizes their responsibilities around Controlled Unclassified Information (CUI).
+---
+19. The organization maintains an Incident Response Plan (IRP) that outlines detection, reporting, containment, eradication, and recovery procedures; tabletop exercises are conducted every six months.
+---
+27. An Intrusion Detection System (IDS) monitors inbound and outbound traffic for known attack patterns and anomalies, alerting the SOC team in real time for incident triage."
+AU.L2-3.3.2,Partially Met,0.6,"the policy partially meets the requirement by requiring unique user identifiers and password assignment. however, it does not explicitly address the requirement of uniquely tracing actions of individual users.","14. Security logs — including authentication events, system errors, and administrator actions — are centralized, monitored for anomalies, and retained securely for 90 days.
+---
+1. Every user accessing organizational systems is assigned a unique user identifier and password; shared or default credentials are strictly prohibited, and newly provisioned accounts require immediate password changes.
+---
+15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events."
+RA.L2-3.11.1,Partially Met,0.6,"the policy mentions that risk assessments are performed annually and after major technology shifts, which is a requirement for periodic assessment. however, the policy does not specify how the risk assessments are conducted or how the results are used to inform risk mitigation activities.","34. Formal risk assessments are performed annually and after major technology shifts; risks are rated using a qualitative matrix, and mitigation plans are documented in the Risk Register.
+---
+15. Log data is reviewed by the IT security team monthly, with special attention to failed logins, access anomalies, and privilege escalations; alerts are configured for critical events.
+---
+20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment."
+CM.L2-3.4.3,Partially Met,0.6,"the organization partially meets the requirement by requiring peer-reviewed change tickets for production systems, but it does not explicitly mention tracking, reviewing, and approving/disapproving changes to the system.","20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.
+---
+21. Users are prevented from installing or modifying software on workstations; only authorized administrators may perform installations following a ticket-based review.
+---
+36. Public-facing communications (e.g., blogs, marketing) are reviewed by the Compliance Officer to ensure that no sensitive operational or client-related information is inadvertently disclosed."
+SI.L2-3.14.1,Not Met,0.5,"the organization partially meets the requirement.
+
+the policy mentions vulnerability scans, configuration changes, and clock synchronization, which are all important aspects of system security. however, the timeframes for remediation and patch deployment are not clearly defined, and the policy does not address the requirement to identify and report system flaws in a timely manner.","28. Vulnerability scans are performed weekly using OpenVAS; high-severity issues are remediated within 72 hours, and patch deployment is tracked using endpoint management software.
+---
+20. Configuration changes to production systems require peer-reviewed change tickets in the ITSM tool; each change includes rollback procedures and pre-deployment risk assessment.
+---
+13. All system clocks are synchronized via an NTP server to maintain accurate timestamps across security logs, system audits, and forensic investigations."

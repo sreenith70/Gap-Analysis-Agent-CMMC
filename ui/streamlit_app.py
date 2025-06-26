@@ -3,74 +3,55 @@ import json
 import pandas as pd
 from pathlib import Path
 
-# Adjusted paths based on your setup
-policy_path = Path("../cmmc_agent/data/sample_policy.txt")
-controls_path = Path("controls/sample_controls.json")
-report_path = Path("outputs/gap_report.json")
+# Corrected path for local run (inside /ui/)
+base_dir = Path(__file__).resolve().parent.parent
+policy_path = base_dir / "data" / "sample_policy.txt"
+controls_path = base_dir / "controls" / "sample_controls.json"
+report_path = base_dir / "outputs" / "gap_report.json"
 
 st.set_page_config(page_title="CMMC Gap Analysis", layout="wide")
 st.title("🛡️ CMMC Gap Analysis Dashboard")
 
-# Sidebar
+# Sidebar Navigation
 page = st.sidebar.radio("Navigate", ["View Policy", "View Controls", "View Gap Report"])
 
+# ----------------------------
+# File Loaders
+# ----------------------------
+
 def load_policy():
-    """Load policy file with error handling"""
     try:
         if not policy_path.exists():
-            return "Policy file not found. Please check the file path."
+            return "Policy file not found."
         return policy_path.read_text(encoding="utf-8")
     except Exception as e:
         return f"Error loading policy: {str(e)}"
 
 def load_controls():
-    """Load controls JSON with error handling"""
     try:
         if not controls_path.exists():
             return []
         with controls_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-            # Handle both list and dict formats
-            if isinstance(data, list):
-                return data
-            elif isinstance(data, dict) and 'controls' in data:
-                return data['controls']
-            else:
-                return [data]  # Single control object
-    except json.JSONDecodeError as e:
-        st.error(f"Invalid JSON in controls file: {str(e)}")
-        return []
+            return data if isinstance(data, list) else [data]
     except Exception as e:
         st.error(f"Error loading controls: {str(e)}")
         return []
 
 def load_gap_report():
-    """Load gap report JSON with error handling"""
     try:
         if not report_path.exists():
             return []
         with report_path.open("r", encoding="utf-8") as f:
             data = json.load(f)
-            # Handle different JSON structures
-            if isinstance(data, list):
-                return data
-            elif isinstance(data, dict):
-                if "results" in data:
-                    return data["results"]
-                elif "gaps" in data:
-                    return data["gaps"]
-                else:
-                    return [data]  # Single result object
-            else:
-                return []
-    except json.JSONDecodeError as e:
-        st.error(f"Invalid JSON in gap report file: {str(e)}")
-        return []
+            return data if isinstance(data, list) else [data]
     except Exception as e:
         st.error(f"Error loading gap report: {str(e)}")
         return []
 
-# Page routing
+# ----------------------------
+# Page: Policy Viewer
+# ----------------------------
 if page == "View Policy":
     st.subheader("📄 Sample Policy")
     policy_content = load_policy()
@@ -79,6 +60,9 @@ if page == "View Policy":
     else:
         st.warning("No policy content available.")
 
+# ----------------------------
+# Page: Controls Viewer
+# ----------------------------
 elif page == "View Controls":
     st.subheader("🔍 CMMC Controls")
     controls_data = load_controls()
@@ -86,67 +70,53 @@ elif page == "View Controls":
     if controls_data:
         try:
             df = pd.DataFrame(controls_data)
-            if df.empty:
-                st.warning("Controls data is empty.")
-            else:
-                st.dataframe(df, use_container_width=True)
+            st.dataframe(df, use_container_width=True)
         except Exception as e:
-            st.error(f"Error creating dataframe from controls: {str(e)}")
-            st.json(controls_data)  # Show raw data as fallback
+            st.error(f"Error displaying controls: {str(e)}")
+            st.json(controls_data)
     else:
-        st.warning("No controls data available.")
+        st.warning("No control data available.")
 
+# ----------------------------
+# Page: Gap Report Viewer
+# ----------------------------
 elif page == "View Gap Report":
     st.subheader("📊 Gap Analysis Results")
     gap_data = load_gap_report()
     
-    if gap_data:
+    if not gap_data:
+        st.warning("No gap report data found.")
+    else:
         try:
             df = pd.DataFrame(gap_data)
-            
+
             if df.empty:
-                st.warning("Gap report data is empty.")
+                st.warning("Gap report is empty.")
             else:
-                # Check if required columns exist
-                available_columns = df.columns.tolist()
-                st.info(f"Available columns: {', '.join(available_columns)}")
-                
-                # Filters - only add if columns exist
+                # Show columns
+                st.markdown(f"**Available Columns:** {', '.join(df.columns)}")
+
+                # Filter by status
                 if "status" in df.columns:
-                    status_options = df["status"].unique()
-                    status_filter = st.multiselect(
-                        "Filter by Status", 
-                        status_options, 
-                        default=status_options
-                    )
-                    df = df[df["status"].isin(status_filter)]
-                
-                # Search functionality
-                search_columns = [col for col in df.columns if df[col].dtype == 'object']
-                if search_columns:
-                    search_column = st.selectbox("Search in column:", search_columns)
-                    keyword = st.text_input(f"Search in {search_column}")
-                    
+                    status_options = df["status"].dropna().unique().tolist()
+                    selected = st.multiselect("Filter by Status", status_options, default=status_options)
+                    df = df[df["status"].isin(selected)]
+
+                # Keyword Search
+                text_columns = [c for c in df.columns if df[c].dtype == 'object']
+                if text_columns:
+                    col_to_search = st.selectbox("Search column:", text_columns)
+                    keyword = st.text_input("Keyword:")
                     if keyword:
-                        df = df[df[search_column].astype(str).str.contains(keyword, case=False, na=False)]
-                
-                # Display filtered dataframe
+                        df = df[df[col_to_search].astype(str).str.contains(keyword, case=False, na=False)]
+
+                # Display result
                 st.dataframe(df, use_container_width=True)
-                
-                # CSV Download
+
+                # Export
                 if not df.empty:
                     csv = df.to_csv(index=False).encode("utf-8")
-                    st.download_button(
-                        "⬇️ Download CSV", 
-                        csv, 
-                        "filtered_gap_report.csv", 
-                        "text/csv"
-                    )
-                else:
-                    st.info("No data matches the current filters.")
-                    
+                    st.download_button("⬇ Download CSV", csv, "gap_report_filtered.csv", "text/csv")
         except Exception as e:
-            st.error(f"Error processing gap report data: {str(e)}")
-            st.json(gap_data)  # Show raw data as fallback
-    else:
-        st.warning("No gap report data available.")
+            st.error(f"Error rendering gap report: {str(e)}")
+            st.json(gap_data)
