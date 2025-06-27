@@ -115,20 +115,22 @@ This agent operates entirely offline, using the **Gemma 2B** LLM (via Ollama) fo
 
 ```text
 gap-analysis-agent-cmmc/
-├── controls/         # CMMC controls (JSON)
-├── data/             # Sample policy text files
-├── embeddings/       # (Optional) Backups of embedded chunks
-├── outputs/          # Generated gap analysis reports (JSON/CSV)
-├── parser/           # (Optional) Preprocessing utilities
-├── ui/               # Streamlit dashboard source code
-├── vector_db/        # ChromaDB local vector store
-├── embed_engine.py   # Script to embed policy documents
-├── rag_engine.py     # Script to run the core gap analysis
-├── main.py           # Main entrypoint with input validation
-├── export_gap_to_csv.py # Utility to convert JSON report to CSV
-├── run_dashboard.bat # Quick launcher for the UI on Windows
-├── requirements.txt  # Project dependencies
-└── README.md         # This file
+├── controls/             # CMMC control set (JSON)
+├── data/                 # Sample policy documents (TXT)
+├── outputs/              # Gap analysis output files (JSON/CSV)
+├── screenshots/          # Screenshots used for documentation
+├── ui/                   # Streamlit UI source code
+├── vector_db/            # ChromaDB vector store for embeddings
+├── src/
+│   └── gap_agent/
+│       ├── embed_engine.py        # Embeds policy documents into vector DB
+│       ├── rag_engine.py          # Performs RAG-based gap analysis
+│       ├── export_gap_to_csv.py   # Converts analysis output to CSV
+│       └── __init__.py            # Makes the folder a Python package
+├── run_dashboard.bat     # Windows shortcut to launch the UI
+├── requirements.txt      # Python dependencies
+├── LICENSE.txt           # License information
+└── README.md             # Project documentation (this file)
 ```
 
 ---
